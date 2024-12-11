@@ -1,0 +1,19 @@
+schema: '2.0'
+stages:
+  build-paper:
+    cmd: calkit runenv -n latex "cd paper && latexmk -interaction=nonstopmode -pdf
+      paper.tex"
+    deps:
+    - path: .calkit/environments/latex.yaml
+      hash: md5
+      md5: a2daf8fb84b593caf26512bdea23a39e
+      size: 75
+    - path: paper/paper.tex
+      hash: md5
+      md5: 2e5ebc4060f46772c41e6602ba7efd23
+      size: 580
+    outs:
+    - path: paper/paper.pdf
+      hash: md5
+      md5: 2c9eca01fe89424216bfad052e65b4e3
+      size: 45451
