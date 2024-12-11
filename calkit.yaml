@@ -4,3 +4,12 @@ title: LaTeX with GitHub Codespaces
 description: Setting up a collaborative LaTeX environment with Calkit and
   GitHub Codespaces.
 git_repo_url: https://github.com/petebachant/calkit-latex-codespaces
+publications:
+  - path: paper/paper.pdf
+    kind: report
+    title: The paper
+    description: This is the paper.
+    stage: build-paper
+environments:
+  latex:
+    _include: .calkit/environments/latex.yaml
