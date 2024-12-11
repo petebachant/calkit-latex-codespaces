@@ -1,0 +1,6 @@
+owner: petebachant
+name: latex-with-github-codespaces
+title: LaTeX with GitHub Codespaces
+description: Setting up a collaborative LaTeX environment with Calkit and
+  GitHub Codespaces.
+git_repo_url: https://github.com/petebachant/calkit-latex-codespaces
