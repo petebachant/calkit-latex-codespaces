@@ -1,13 +1,13 @@
 schema: '2.0'
 stages:
   build-paper:
-    cmd: calkit runenv -n latex "cd paper && latexmk -interaction=nonstopmode -pdf
-      paper.tex"
+    cmd: calkit xenv -n tex --no-check -- latexmk -cd -interaction=nonstopmode -silent
+      -synctex=1 -pdf paper/paper.tex
     deps:
-    - path: .calkit/environments/latex.yaml
+    - path: .calkit/env-locks/tex.json
       hash: md5
-      md5: a2daf8fb84b593caf26512bdea23a39e
-      size: 75
+      md5: c25288f842fbbf08b32381c979e0e12e
+      size: 1171
     - path: paper/paper.tex
       hash: md5
       md5: 2e5ebc4060f46772c41e6602ba7efd23
@@ -15,5 +15,12 @@ stages:
     outs:
     - path: paper/paper.pdf
       hash: md5
-      md5: 2c9eca01fe89424216bfad052e65b4e3
-      size: 45451
+      md5: fe4648a96792ba88dd173deb687d3743
+      size: 45342
+  _check-env-tex:
+    cmd: calkit check environment --name tex
+    outs:
+    - path: .calkit/env-locks/tex.json
+      hash: md5
+      md5: c25288f842fbbf08b32381c979e0e12e
+      size: 1171

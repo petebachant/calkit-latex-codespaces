@@ -11,5 +11,13 @@ publications:
     description: This is the paper.
     stage: build-paper
 environments:
-  latex:
-    _include: .calkit/environments/latex.yaml
+  tex:
+    kind: docker
+    image: texlive/texlive:latest-full
+    description: TeXlive full.
+pipeline:
+  stages:
+    build-paper:
+      kind: latex
+      target_path: paper/paper.tex
+      environment: tex
